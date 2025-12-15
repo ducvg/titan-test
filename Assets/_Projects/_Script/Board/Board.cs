@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public sealed class Board : MonoBehaviour
@@ -37,7 +36,7 @@ public sealed class Board : MonoBehaviour
         {
             for(int c = 0; c < col; ++c)
             {
-                boardGrid[r,c] = new Cell();
+                boardGrid[c,r] = new Cell();
             }
         }
     }
