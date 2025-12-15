@@ -228,12 +228,12 @@ public sealed class Board : MonoBehaviour
     {
         int shapeHeight = shape.GetLength(0);
         int shapeWidth = shape.GetLength(1);
-        int row = GetHeight() - shapeHeight;
-        int col = GetWidth() - shapeWidth;
+        int rowLimit = GetHeight() - shapeHeight;
+        int colLimit = GetWidth() - shapeWidth;
 
-        for(int r = 0; r < row; ++r)
+        for(int r = 0; r <= rowLimit; ++r)
         {
-            for(int c = 0; c < col; ++c)
+            for(int c = 0; c <= colLimit; ++c)
             {
                 if(CanPlaceShapeAt(shape,shapeHeight,shapeWidth,r,c)) return true;
             }
@@ -259,7 +259,7 @@ public sealed class Board : MonoBehaviour
     public void Clear()
     {
         if(boardGrid==null) return;
-        
+
         int row = GetHeight();
         int col = GetWidth();
 
