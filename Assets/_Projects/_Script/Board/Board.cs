@@ -246,7 +246,7 @@ public sealed class Board : MonoBehaviour
         {
             for (int c = 0; c < shapeWidth; ++c)
             {
-                if (shape[r, c] > 0 && !boardGrid[startRow + r, startCol + c].CanPlace())
+                if (shape[r, c] > 0 && !boardGrid[startCol + c, startRow + r].CanPlace())
                 {
                     return false;
                 }
